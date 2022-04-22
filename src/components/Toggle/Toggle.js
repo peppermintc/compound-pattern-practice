@@ -2,16 +2,18 @@ import styled from 'styled-components';
 import { ToggleProvider, useToggleContext } from './useToggleContext';
 
 const Container = styled.div`
+  box-sizing: border-box;
   width: fit-content;
+  height: 45px;
   position: relative;
   display: flex;
   margin: 0 auto;
-  padding: 2px;
   background-color: #ebebeb;
   border-radius: 24px;
 `;
 
 const ButtonContainer = styled.button`
+  box-sizing: border-box;
   width: 100px;
   padding: 10px 20px;
   border: none;
@@ -24,10 +26,11 @@ const ButtonContainer = styled.button`
 `;
 
 const SlidingBoxBase = styled.div`
+  box-sizing: border-box;
   position: absolute;
   top: 0;
   left: 0;
-  width: ${({ labelsLength }) => `${100 / labelsLength}%`};
+  width: 100px;
   height: 100%;
   background-color: white;
   border: 3px solid #ebebeb;

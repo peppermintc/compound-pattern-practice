@@ -1,5 +1,3 @@
-import _ from 'lodash';
-import { useState, useLayoutEffect } from 'react';
 import styled from 'styled-components';
 import { ToggleProvider, useToggleContext } from './useToggleContext';
 
@@ -25,11 +23,11 @@ const ButtonContainer = styled.button`
   color: ${({ isSelected }) => (isSelected ? 'black' : 'gray')};
 `;
 
-const ToggleBox = styled.div`
+const SlidingBoxBase = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  width: ${({ childrenLength }) => `${100 / childrenLength}%`};
+  width: ${({ labelsLength }) => `${100 / labelsLength}%`};
   height: 100%;
   background-color: white;
   border: 3px solid #ebebeb;
@@ -38,13 +36,21 @@ const ToggleBox = styled.div`
   transform: ${({ selectedIndex }) => `translateX(${selectedIndex * 100}%)`};
 `;
 
-const Button = ({ label }) => {
-  const { toggleValue, handleSetToggleValue } = useToggleContext();
+const SlidingBox = () => {
+  const { labelsLength, currentIndex } = useToggleContext();
 
-  const isSelected = label === toggleValue;
+  return (
+    <SlidingBoxBase labelsLength={labelsLength} selectedIndex={currentIndex} />
+  );
+};
+
+const Button = ({ label }) => {
+  const { currentValue, setCurrentValue } = useToggleContext();
+
+  const isSelected = label === currentValue;
 
   const onButtonClick = () => {
-    handleSetToggleValue(label);
+    setCurrentValue(label);
   };
 
   return (
@@ -55,39 +61,11 @@ const Button = ({ label }) => {
 };
 
 const Toggle = ({ children }) => {
-  const [toggleValue, setToggleValue] = useState();
-  const [childrenLength, setChildrenLength] = useState();
-
-  useLayoutEffect(() => {
-    const setInitialState = () => {
-      setToggleValue(children[0].props.label);
-      setChildrenLength(children.length);
-    };
-
-    setInitialState();
-  }, [children]);
-
-  const handleSetToggleValue = (newValue) => {
-    setToggleValue(newValue);
-  };
-
-  const selectedIndex = _.findIndex(
-    children,
-    (item) => item.props.label === toggleValue,
-  );
-
   return (
-    <ToggleProvider
-      childrenLength={childrenLength}
-      toggleValue={toggleValue}
-      handleSetToggleValue={handleSetToggleValue}
-    >
+    <ToggleProvider>
       <Container>
         {children}
-        <ToggleBox
-          childrenLength={childrenLength}
-          selectedIndex={selectedIndex}
-        />
+        <SlidingBox />
       </Container>
     </ToggleProvider>
   );

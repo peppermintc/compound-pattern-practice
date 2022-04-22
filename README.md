@@ -90,4 +90,5 @@ yarn storybook
 - 2022-04-20 Toggle 컴포넌트
 - 2022-04-22 Storybook 추가, Toggle 컴포넌트 리팩토링
 
+Story 고도화, TypeScript 추가
 이후 계속...

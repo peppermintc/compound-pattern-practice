@@ -56,6 +56,12 @@ React 18과의 호환 문제가 있어 React를 v17.0.2로 다운그레이드 �
 
 ---
 
+### Trouble Shooting
+
+- Toggle 컴포넌트: 크롬 브라우저에서 렌더링할 때와 storybook에서 렌더링할 때 `SlidingBox` 크기 차이가 있음
+
+---
+
 ### 실행 방법
 
 node_modules 설치

@@ -28,9 +28,9 @@ Toggle 폴더의 `Toggle.js` 파일에서 `Toggle` 컴포넌트를 import하여 
 
 #### 구현 설명
 
-- `Toggle 컴포넌트`는 외부를 감싸는 `Container 컴포넌트`, 내부에 존재하는 atom 컴포넌트인 `Toggle.Button 컴포넌트`, 좌우로 슬라이드되는 `ToggleBox 컴포넌트`로 구성되어 있습니다. 그리고 내부의 Atom들이 상태를 공유 할 수 있도록 `ToggleProvider 컴포넌트`로 모두를 감싸주었습니다.
-- state 값인 `toggleValue`는 현재 선택된 값을 string으로 갖도록 구현하였습니다.
-- 흰색 배경을 가진 `ToggleBox 컴포넌트`가 context 값들인 `selectedIndex`, `children.length`에 따라 `CSS transform translateX`로 좌우로 슬라이드되도록 하였습니다.
+- `Toggle 컴포넌트`는 외부를 감싸는 `Container 컴포넌트`, 내부에 존재하는 atom 컴포넌트인 `Toggle.Button 컴포넌트`, 좌우로 슬라이드되는 `SlidingBox 컴포넌트`로 구성되어 있습니다. 그리고 내부의 Atom들이 상태를 공유 할 수 있도록 `ToggleProvider 컴포넌트`로 모두를 감싸주었습니다.
+- View 로직은 `Toggle.js` 파일, 비즈니스 로직은 `useToggleContext.js` 파일에서 나누어 관리하도록 하였습니다.
+- 흰색 배경을 가진 `SlidingBox 컴포넌트`는 state 값들인 `currentIndex`, `labelsLength`에 따라 `CSS transform translateX`로 좌우로 슬라이드되도록 하였습니다.
 
 #### Preview
 
@@ -81,6 +81,6 @@ yarn storybook
 #### 작업
 
 - 2022-04-20 Toggle 컴포넌트
-- 2022-04-22 Storybook 추가, Toggle 컴포넌트 수정
+- 2022-04-22 Storybook 추가, Toggle 컴포넌트 리팩토링
 
 이후 계속...

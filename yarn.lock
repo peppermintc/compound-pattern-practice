@@ -2484,6 +2484,13 @@
   dependencies:
     lodash "^4.17.15"
 
+"@storybook/csf@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@storybook/csf/-/csf-0.0.1.tgz#95901507dc02f0bc6f9ac8ee1983e2fc5bb98ce6"
+  integrity sha512-USTLkZze5gkel8MYCujSRBVIrUQ3YPBrLOx7GNk/0wttvVtlzWXAq9eLbQ4p/NicGxP+3T7KPEMVV//g+yubpw==
+  dependencies:
+    lodash "^4.17.15"
+
 "@storybook/instrumenter@6.4.22", "@storybook/instrumenter@^6.4.0 || >=6.5.0-0":
   version "6.4.22"
   resolved "https://registry.yarnpkg.com/@storybook/instrumenter/-/instrumenter-6.4.22.tgz#3884d55a1115ea893d49590cdfae9601640e955b"
@@ -3402,7 +3409,7 @@
     semver "^7.3.5"
     tsutils "^3.21.0"
 
-"@typescript-eslint/experimental-utils@^5.0.0":
+"@typescript-eslint/experimental-utils@^5.0.0", "@typescript-eslint/experimental-utils@^5.3.0":
   version "5.20.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/experimental-utils/-/experimental-utils-5.20.0.tgz#7ed593bed40424d9c4160f3f86c3f6f56d6c87af"
   integrity sha512-w5qtx2Wr9x13Dp/3ic9iGOGmVXK5gMwyc8rwVgZU46K9WTjPZSyPvdER9Ycy+B5lNHvoz+z2muWhUvlTpQeu+g==
@@ -6513,6 +6520,15 @@ eslint-plugin-react@^7.27.1:
     resolve "^2.0.0-next.3"
     semver "^6.3.0"
     string.prototype.matchall "^4.0.6"
+
+eslint-plugin-storybook@^0.5.11:
+  version "0.5.11"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-storybook/-/eslint-plugin-storybook-0.5.11.tgz#1cc3e24bbc38a4407e0ab26674b7668ad2dbac9e"
+  integrity sha512-uNQn9zjH/+UiFxRC4hd69DnxOu4RoRbr76+yc3Bp/vIEo/n2K+NdQGh3zK9JLdMoctFAbzMfoKi9FQbZVZsCvQ==
+  dependencies:
+    "@storybook/csf" "^0.0.1"
+    "@typescript-eslint/experimental-utils" "^5.3.0"
+    requireindex "^1.1.0"
 
 eslint-plugin-testing-library@^5.0.1:
   version "5.3.1"
@@ -11962,6 +11978,11 @@ require-from-string@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/require-from-string/-/require-from-string-2.0.2.tgz#89a7fdd938261267318eafe14f9c32e598c36909"
   integrity sha512-Xf0nWe6RseziFMu+Ap9biiUbmplq6S9/p+7w7YXP/JBHhrUDDUhwa+vANyubuqfZWTveU//DYVGsDG7RKL/vEw==
+
+requireindex@^1.1.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/requireindex/-/requireindex-1.2.0.tgz#3463cdb22ee151902635aa6c9535d4de9c2ef1ef"
+  integrity sha512-L9jEkOi3ASd9PYit2cwRfyppc9NoABujTP8/5gFcbERmo5jUoAKovIC3fsF17pkTnGsrByysqX+Kxd2OTNI1ww==
 
 requires-port@^1.0.0:
   version "1.0.0"

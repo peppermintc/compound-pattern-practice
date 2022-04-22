@@ -15,5 +15,5 @@ const Template = (args) => (
   </Toggle>
 );
 
-export const fiveButtons = Template.bind({});
-fiveButtons.args = {};
+export const FiveButtons = Template.bind({});
+FiveButtons.args = {};

@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import { useState } from 'react';
+import { useState, useLayoutEffect } from 'react';
 import styled from 'styled-components';
 import { ToggleProvider, useToggleContext } from './useToggleContext';
 
@@ -55,7 +55,17 @@ const Button = ({ label }) => {
 };
 
 const Toggle = ({ children }) => {
-  const [toggleValue, setToggleValue] = useState(children[0].props.label);
+  const [toggleValue, setToggleValue] = useState();
+  const [childrenLength, setChildrenLength] = useState();
+
+  useLayoutEffect(() => {
+    const setInitialState = () => {
+      setToggleValue(children[0].props.label);
+      setChildrenLength(children.length);
+    };
+
+    setInitialState();
+  }, [children]);
 
   const handleSetToggleValue = (newValue) => {
     setToggleValue(newValue);
@@ -68,14 +78,14 @@ const Toggle = ({ children }) => {
 
   return (
     <ToggleProvider
-      childrenLength={children.length}
+      childrenLength={childrenLength}
       toggleValue={toggleValue}
       handleSetToggleValue={handleSetToggleValue}
     >
       <Container>
         {children}
         <ToggleBox
-          childrenLength={children.length}
+          childrenLength={childrenLength}
           selectedIndex={selectedIndex}
         />
       </Container>

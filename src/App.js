@@ -1,4 +1,4 @@
-import Toggle from './components/Toggle/Toggle';
+import Toggle from './components/Toggle';
 
 function App() {
   return (

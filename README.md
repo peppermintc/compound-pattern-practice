@@ -56,6 +56,28 @@ React 18과의 호환 문제가 있어 React를 v17.0.2로 다운그레이드 �
 
 ---
 
+### 실행 방법
+
+node_modules 설치
+
+```
+yarn install
+```
+
+CRA 프로젝트 실행
+
+```
+yarn start
+```
+
+Storybook 실행
+
+```
+yarn storybook
+```
+
+---
+
 #### 작업
 
 - 2022-04-20 Toggle 컴포넌트

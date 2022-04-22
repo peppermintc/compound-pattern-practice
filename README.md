@@ -38,8 +38,27 @@ Toggle 폴더의 `Toggle.js` 파일에서 `Toggle` 컴포넌트를 import하여 
 
 ---
 
+### Storybook
+
+UI 컴포넌트를 독립된 환경에서 테스트해볼수 있는 개발 도구인 Storybook을 추가하였습니다.
+
+#### Storybook 추가 과정에서의 문제점
+
+React 18과의 호환 문제가 있어 React를 v17.0.2로 다운그레이드 한 후 Storybook을 추가하였습니다.
+
+#### 장점
+
+기존에 발견하지 못했던 UI 컴포넌트의 문제점을 새롭게 발견했습니다.
+
+#### 사용
+
+- 브라우저 환경에서는 발견하지 못했었던 Toggle 컴포넌트의 state 초기화 문제를 Storybook 환경에서는 발경할 수 있었습니다. Toggle 컴포넌트의 state들이 rendering 이후 초기화되도록 변경하였습니다.
+
+---
+
 #### 작업
 
 - 2022-04-20 Toggle 컴포넌트
+- 2022-04-22 Storybook 추가, Toggle 컴포넌트 수정
 
 이후 계속...

@@ -26,15 +26,6 @@ const ToggleProvider = ({ children }) => {
   }, [children]);
 
   useEffect(() => {
-    const checkLabelsUnique = () => {
-      const isUnique = _.uniq(labels).length === labels.length;
-      if (!isUnique) console.warn('All label should have unique value');
-    };
-
-    checkLabelsUnique();
-  }, [labels]);
-
-  useEffect(() => {
     const newCurrentIndex = _.findIndex(
       labels,
       (label) => label === currentValue,
@@ -42,6 +33,15 @@ const ToggleProvider = ({ children }) => {
 
     setCurrentIndex(newCurrentIndex);
   }, [labels, currentValue]);
+
+  useEffect(() => {
+    const checkLabelsUnique = () => {
+      const isUnique = _.uniq(labels).length === labels.length;
+      if (!isUnique) console.warn('All label should have unique value');
+    };
+
+    checkLabelsUnique();
+  }, [labels]);
 
   return (
     <ToggleContext.Provider

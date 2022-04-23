@@ -36,15 +36,13 @@ const SlidingBoxBase = styled.div`
   border: 3px solid #ebebeb;
   border-radius: 24px;
   transition: 0.3s;
-  transform: ${({ selectedIndex }) => `translateX(${selectedIndex * 100}%)`};
+  transform: ${({ currentIndex }) => `translateX(${currentIndex * 100}%)`};
 `;
 
 const SlidingBox = () => {
-  const { labelsLength, currentIndex } = useToggleContext();
+  const { currentIndex } = useToggleContext();
 
-  return (
-    <SlidingBoxBase labelsLength={labelsLength} selectedIndex={currentIndex} />
-  );
+  return <SlidingBoxBase currentIndex={currentIndex} />;
 };
 
 const Button = ({ label }) => {

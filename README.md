@@ -31,6 +31,7 @@ Toggle 폴더의 `Toggle.js` 파일에서 `Toggle` 컴포넌트를 import하여 
 - `Toggle 컴포넌트`는 외부를 감싸는 `Container 컴포넌트`, 내부에 존재하는 atom 컴포넌트인 `Toggle.Button 컴포넌트`, 좌우로 슬라이드되는 `SlidingBox 컴포넌트`로 구성되어 있습니다. 그리고 내부의 Atom들이 상태를 공유 할 수 있도록 `ToggleProvider 컴포넌트`로 모두를 감싸주었습니다.
 - View 로직은 `Toggle.js` 파일, 비즈니스 로직은 `useToggleContext.js` 파일에서 나누어 관리하도록 하였습니다.
 - 흰색 배경을 가진 `SlidingBox 컴포넌트`는 state 값들인 `currentIndex`, `labelsLength`에 따라 `CSS transform translateX`로 좌우로 슬라이드되도록 하였습니다.
+- `Toggle.Button`의 label 값을 확인하여 중복 값이 있다면 console.warn으로 안내하도록 하였습니다.
 
 #### Preview
 

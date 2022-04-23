@@ -5,36 +5,62 @@ export default {
   title: 'Toggle',
 };
 
-export const TwoButtons = () => (
+const TwoButtonsTemplate = (args) => (
   <Toggle>
-    <Toggle.Button label="ON" />
-    <Toggle.Button label="OFF" />
+    <Toggle.Button label={args.label1} />
+    <Toggle.Button label={args.label2} />
   </Toggle>
 );
+export const TwoButtons = TwoButtonsTemplate.bind({});
+TwoButtons.args = {
+  label1: 'ON',
+  label2: 'OFF',
+};
 
-export const ThreeButtons = () => (
+const ThreeButtonsTemplate = (args) => (
   <Toggle>
-    <Toggle.Button label="Small" />
-    <Toggle.Button label="Medium" />
-    <Toggle.Button label="Large" />
+    <Toggle.Button label={args.label1} />
+    <Toggle.Button label={args.label2} />
+    <Toggle.Button label={args.label3} />
   </Toggle>
 );
+export const ThreeButtons = ThreeButtonsTemplate.bind({});
+ThreeButtons.args = {
+  label1: 'Small',
+  label2: 'Medium',
+  label3: 'Large',
+};
 
-export const FourButtons = () => (
+const FourButtonsTemplate = (args) => (
   <Toggle>
-    <Toggle.Button label="1" />
-    <Toggle.Button label="2" />
-    <Toggle.Button label="3" />
-    <Toggle.Button label="4" />
+    <Toggle.Button label={args.label1} />
+    <Toggle.Button label={args.label2} />
+    <Toggle.Button label={args.label3} />
+    <Toggle.Button label={args.label4} />
   </Toggle>
 );
+export const FourButtons = FourButtonsTemplate.bind({});
+FourButtons.args = {
+  label1: '1',
+  label2: '2',
+  label3: '3',
+  label4: '4',
+};
 
-export const FiveButtons = () => (
+const FiveButtonsTemplate = (args) => (
   <Toggle>
-    <Toggle.Button label="Apple" />
-    <Toggle.Button label="Peach" />
-    <Toggle.Button label="Banana" />
-    <Toggle.Button label="Grass" />
-    <Toggle.Button label="Ham" />
+    <Toggle.Button label={args.label1} />
+    <Toggle.Button label={args.label2} />
+    <Toggle.Button label={args.label3} />
+    <Toggle.Button label={args.label4} />
+    <Toggle.Button label={args.label5} />
   </Toggle>
 );
+export const FiveButtons = FiveButtonsTemplate.bind({});
+FiveButtons.args = {
+  label1: 'Apple',
+  label2: 'Peach',
+  label3: 'Banana',
+  label4: 'Grass',
+  label5: 'Ham',
+};

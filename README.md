@@ -7,10 +7,10 @@
 #### 사용 방법 설명
 
 ```javascript
-import Toggle from './components/Toggle/Toggle';
+import Toggle from './components/Toggle';
 ```
 
-Toggle 폴더의 `Toggle.js` 파일에서 `Toggle` 컴포넌트를 import하여 사용합니다.
+Toggle 폴더의 `index.js` 파일을 통해 `Toggle 컴포넌트`를 import하여 사용합니다.
 
 ```javascript
 <Toggle>
@@ -31,7 +31,8 @@ Toggle 폴더의 `Toggle.js` 파일에서 `Toggle` 컴포넌트를 import하여 
 - `Toggle 컴포넌트`는 외부를 감싸는 `Container 컴포넌트`, 내부에 존재하는 atom 컴포넌트인 `Toggle.Button 컴포넌트`, 좌우로 슬라이드되는 `SlidingBox 컴포넌트`로 구성되어 있습니다. 그리고 내부의 Atom들이 상태를 공유 할 수 있도록 `ToggleProvider 컴포넌트`로 모두를 감싸주었습니다.
 - View 로직은 `Toggle.js` 파일, 비즈니스 로직은 `useToggleContext.js` 파일에서 나누어 관리하도록 하였습니다.
 - 흰색 배경을 가진 `SlidingBox 컴포넌트`는 state 값들인 `currentIndex`, `labelsLength`에 따라 `CSS transform translateX`로 좌우로 슬라이드되도록 하였습니다.
-- `Toggle.Button`의 label 값을 확인하여 중복 값이 있다면 console.warn으로 안내하도록 하였습니다.
+- `Toggle.Button`의 `label 값`을 확인하여 중복 값이 있다면 `console.warn`으로 안내하도록 하였습니다.
+- `Toggle.stories.js`에 4가지 스토리 작성
 
 #### Preview
 
@@ -41,27 +42,23 @@ Toggle 폴더의 `Toggle.js` 파일에서 `Toggle` 컴포넌트를 import하여 
 
 ### Storybook
 
-UI 컴포넌트를 독립된 환경에서 테스트해볼수 있는 개발 도구인 Storybook을 추가하였습니다.
+UI 컴포넌트를 독립된 환경에서 테스트해 볼수 있는 Storybook을 추가하였습니다.
 
 #### Storybook 추가 과정에서의 문제점
 
-React 18과의 호환 문제가 있어 React를 v17.0.2로 다운그레이드 한 후 Storybook을 추가하였습니다.
+React 18과의 호환 문제가 있어 React를 v17.0.2로 다운그레이드 후 Storybook을 추가하였습니다.
 
-#### 장점
+#### 사용 경험
 
-기존에 발견하지 못했던 UI 컴포넌트의 문제점을 새롭게 발견했습니다.
-
-#### 사용
-
-- 브라우저 환경에서는 발견하지 못했었던 Toggle 컴포넌트의 state 초기화 문제를 Storybook 환경에서는 발경할 수 있었습니다. Toggle 컴포넌트의 state들이 rendering 이후 초기화되도록 변경하였습니다.
-- 컴포넌트 브라우저 환경 렌더링과 Storybook 환경 렌더링의 차이점을 찾아내어 컴포넌트를 수정하였습니다. Storybook 테스팅이 안정적인 컴포넌트를 구현하는데 많은 도움이 되는 것 같습니다.
+브라우저 환경에서는 미처 발견하지 못했던 UI 컴포넌트의 문제점을 찾아내기 용이했습니다. 더 안정적인 컴포넌트 개발에 도움이 되었습니다.
 
 ---
 
 ### Trouble Shooting
 
-- Toggle 컴포넌트를 크롬 브라우저에서 렌더링할 때와 Storybook 환경에서 렌더링할 때 `SlidingBox` 크기 차이가 있었습니다. React 프로젝트의 `index.css`에 글로벌로 설정했던 `box-sizing` 스타일이 스토리북에는 적용되지 않고 있었기 때문에 차이가 있었던 것을 발견하였습니다. 해당 속성을 글로벌에서 해제하고 컴포넌트에 추가하여 두 환경에서 같은 스타일 속성을 가지도록 변경하였습니다.
-- Toggle.Button 컴포넌트의 label 텍스트 길이가 길어지면 초과되어 텍스트 overflow시 ellipsis 처리하였습니다.
+- `Toggle 컴포넌트` state 초기화 문제 발견 후, rendering 이후 state 초기화하도록 수정하였습니다.
+- `Toggle 컴포넌트` 크롬 브라우저 렌더링 결과와 Storybook 환경 렌더링 결과에서 `SlidingBox` 크기 차이 발견, `index.css`에 글로벌로 설정했던 `box-sizing` 속성 제거로 해결하였습니다.
+- `Toggle.Button 컴포넌트` label 텍스트 overflow 될 때, ellipsis로 처리하였습니다.
 
 ---
 
@@ -94,5 +91,5 @@ yarn storybook
 - 2022-04-23 Toggle 스토리 Controls label 추가
 - 2022-04-24 Toggle 컴포넌트 label 중복시 콘솔 warning
 
-Story 고도화, TypeScript 추가
+Story 고도화(Toggle 텍스트 크기, 버튼크기 등 control), TypeScript 추가
 이후 계속...

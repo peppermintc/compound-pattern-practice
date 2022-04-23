@@ -14,7 +14,10 @@ const Container = styled.div`
 
 const ButtonContainer = styled.button`
   box-sizing: border-box;
-  width: 100px;
+  width: 110px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   padding: 10px 20px;
   border: none;
   background-color: transparent;
@@ -30,7 +33,7 @@ const SlidingBoxBase = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  width: 100px;
+  width: 110px;
   height: 100%;
   background-color: white;
   border: 3px solid #ebebeb;

@@ -28,7 +28,7 @@ const ButtonContainer = styled.button`
   color: ${({ isSelected }) => (isSelected ? 'black' : 'gray')};
 `;
 
-const SlidingBoxBase = styled.div`
+const SlidingBoxContainer = styled.div`
   box-sizing: border-box;
   position: absolute;
   top: 0;
@@ -45,7 +45,7 @@ const SlidingBoxBase = styled.div`
 const SlidingBox = () => {
   const { currentIndex } = useToggleContext();
 
-  return <SlidingBoxBase currentIndex={currentIndex} />;
+  return <SlidingBoxContainer currentIndex={currentIndex} />;
 };
 
 const Button = ({ label }) => {

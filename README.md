@@ -60,6 +60,7 @@ React 18과의 호환 문제가 있어 React를 v17.0.2로 다운그레이드 �
 ### Trouble Shooting
 
 - Toggle 컴포넌트를 크롬 브라우저에서 렌더링할 때와 Storybook 환경에서 렌더링할 때 `SlidingBox` 크기 차이가 있었습니다. React 프로젝트의 `index.css`에 글로벌로 설정했던 `box-sizing` 스타일이 스토리북에는 적용되지 않고 있었기 때문에 차이가 있었던 것을 발견하였습니다. 해당 속성을 글로벌에서 해제하고 컴포넌트에 추가하여 두 환경에서 같은 스타일 속성을 가지도록 변경하였습니다.
+- Toggle.Button 컴포넌트의 label 텍스트 길이가 길어지면 초과되어 텍스트 overflow시 ellipsis 처리하였습니다.
 
 ---
 
@@ -89,6 +90,7 @@ yarn storybook
 
 - 2022-04-20 Toggle 컴포넌트
 - 2022-04-22 Storybook 추가, Toggle 컴포넌트 리팩토링
+- 2022-04-23 Toggle 스토리 Controls label 추가
 
 Story 고도화, TypeScript 추가
 이후 계속...

@@ -1,6 +1,6 @@
 ## React Compound Component Pattern Practice
 
-리액트 컴파운드 컴포넌트 패턴 연습
+리액트 컴파운드 컴포넌트 패턴 연습과 스토리북 사용 연습
 
 ### 1. Toggle 컴포넌트
 
